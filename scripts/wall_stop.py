@@ -23,7 +23,7 @@ class WallStop():
 			self.cmd_vel.publish(data)
 			rate.sleep()
 
-if __name__ = '__main__':
+if __name__ == '__main__':
 	rospy.init_node('wall_stop')
 	rospy.wait_for_service('/motor_on')
 	rospy.wait_for_service('/motor_off')
