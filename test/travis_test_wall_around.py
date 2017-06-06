@@ -22,7 +22,7 @@ class WallAroundTest(unittest.TestCase):
 		self.assertTrue(left > right, "don't Clockwize move (ls) ")
 
 		left, right = self.set_and_get(0,0,60,0) #angular.z => -math.pi(CW)
-		self.assertTrue(left > right != 0, "don't Clockwize move (rs)")
+		self.assertTrue(left > right, "don't Clockwize move (rs)")
 
 		left, right = self.set_and_get(0,0,0,60) #curve to left
 		self.assertTrue(left < right, "don't curve to left")
