@@ -18,16 +18,16 @@ class WallAroundTest(unittest.TestCase):
 		return left, right
 		
 	def test_io(self):
-		left, right = self.set_and_get(0,60,0,0) #angular.z => -math.pi(CW)
-		self.assertTrue(left > right, "don't Clockwize move (ls) ")
+		left, right = self.set_and_get(60,0,0,0) #angular.z => -math.pi(CW)
+		self.assertTrue(left > right, "don't Clockwize move (lf) ")
 
-		left, right = self.set_and_get(0,0,60,0) #angular.z => -math.pi(CW)
-		self.assertTrue(left > right, "don't Clockwize move (rs)")
+		left, right = self.set_and_get(0,0,0,60) #angular.z => -math.pi(CW)
+		self.assertTrue(left > right, "don't Clockwize move (rf)")
 
-		left, right = self.set_and_get(0,0,0,60) #curve to left
+		left, right = self.set_and_get(0,0,60,0) #curve to left
 		self.assertTrue(left < right, "don't curve to left")
 
-		left, right = self.set_and_get(60,0,0,0) #curve to right
+		left, right = self.set_and_get(0,60,0,0) #curve to right
 		self.assertTrue(left > right, "can't curve to right")
 
 if __name__ == '__main__':
